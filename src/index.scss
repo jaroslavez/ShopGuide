@@ -1,0 +1,89 @@
+$bg-img: url("./assets/bg.jpg"); 
+@font-face {
+  font-family: 'FuturaDemiC';
+  src: url(/fonts/futurademic-webfont.woff2) format("woff2"),
+  url(/fonts/futurademic-webfont.woff) format("woff"),
+  url(/fonts/futurademic-webfont.eot) format("eot"),
+  url(/fonts/futurademic-webfont.svg) format("svg"),
+  url(/fonts/futurademic-webfont.ttf) format("ttf")
+  ;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  height: 810px;
+  overflow: hidden;
+
+  &__background {
+    height: 100%;
+    width: 100%;
+    background-image: $bg-img;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+    flex: 3;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  position: absolute;
+  top: 22px;
+  height: 53px;
+  max-width: 1285px;
+  width: 100%;
+
+  &__item-header {
+    position: relative;
+    height: 53px;
+    width: 53px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+
+    height: 63px;
+    width: 63px;
+  }
+
+  &__bec-partnr-but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 212px;
+    height: 42px;
+    margin-left: auto;
+
+    font-family: FuturaDemiC;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+}
