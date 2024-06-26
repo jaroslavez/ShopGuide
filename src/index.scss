@@ -1,4 +1,5 @@
 $bg-img: url("./assets/bg.jpg"); 
+
 @font-face {
   font-family: 'FuturaDemiC';
   src: url(/fonts/futurademic-webfont.woff2) format("woff2"),
@@ -9,13 +10,24 @@ $bg-img: url("./assets/bg.jpg");
   ;
 }
 
+@font-face {
+  font-family: 'FuturaBookC';
+  src: url(/fonts/futurabookc-webfont.woff2) format("woff2"),
+  url(/fonts/futurabookc-webfont.woff) format("woff"),
+  url(/fonts/futurabookc-webfont.eot) format("eot"),
+  url(/fonts/futurabookc-webfont.svg) format("svg"),
+  url(/fonts/futurabookc-webfont.ttf) format("ttf")
+  ;
+}
+
 body {
   margin: 0;
 }
 
 .App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-block {
@@ -23,21 +35,106 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
 
+  background-image: $bg-img;
+  background-position: center top;
+
+  max-width: 1600px;
+  width: 100%;
   height: 810px;
   overflow: hidden;
 
-  &__background {
-    height: 100%;
-    width: 100%;
-    background-image: $bg-img;
-  }
-
   &__content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
-    flex: 3;
+    max-width: 1064px;
+    width: 100%;
+  }
+
+  &__wrapper-leftside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 517px;
+    width: 100%
+  
+  }
+
+  &__shop-guide {
+    max-width: 485px;
+    width: 100%;
+    max-height: 93px;
+    height: 100%;
+  }
+  
+  &__download-text{
+    font-family: FuturaBookC;
+    color: white;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    //469
+    max-width: 472px;
+
+    @mixin line ($margin-left, $margin-right) {
+      content: '';
+      flex: 1;
+      margin-left: $margin-left;
+      margin-right: $margin-right;
+      height: 1px;
+      background-color: #ffffff;
+    }
+
+    &::before {
+      @include line(0, 10px);
+    }
+
+    &::after {
+      @include line(10px, 0);
+    }
+  }
+
+  &__phone {
+    position: relative;
+    top: 125px;
+  }
+}
+
+.only-best-prom-wrapper {
+  position: relative;
+  top: 15px;
+  width: 244px;
+  height: 52.75px;
+  align-self: flex-end;
+
+  &__text {
+    font-family: FuturaBookC;
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    left: 30px;
+    top: 11px;
+  }
+}
+
+.download-but-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 476px;
+
+  &__download-but{
+    width: 224.5px;
+    height: 63.74px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+
+    cursor: pointer;
   }
 }
 
@@ -46,8 +143,7 @@ body {
   gap: 10px;
   align-items: center;
 
-  position: absolute;
-  top: 22px;
+  top: 18px;
   height: 53px;
   max-width: 1285px;
   width: 100%;
@@ -85,5 +181,30 @@ body {
 
     border: 2px solid white;
     border-radius: 5px;
+  }
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 430px;
+
+  color: white;
+
+  &__down-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    position: relative;
+    top: -25px;
+    width: 277px;
+    height: 51px;
+
+    box-shadow: 5px 5px 25px gray;
+    border-radius: 15px;
+    background-color: #29D3D1;
   }
 }

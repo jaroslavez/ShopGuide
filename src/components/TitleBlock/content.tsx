@@ -8,24 +8,26 @@ export default function Content () {
     return (
         <div className="title-block__content">
             <div className="title-block__wrapper-leftside">
-                <div>
+                <div className='only-best-prom-wrapper'>
                     <img src={onlyBestPromotion} />
+                    <span className='only-best-prom-wrapper__text'>ТОЛЬКО ЛУЧШИЕ АКЦИИ</span>
                 </div>
-                <span>ТОЛЬКО ЛУЧШИЕ АКЦИИ</span>
-                <div>
+                
+                <div className='title-block__shop-guide'>
                     <img src={shopGuide} />
                 </div>
-                <span>загрузить</span>
-                <div className='title-block__wrapper-download-but'>
-                    <div>
+                <span className='title-block__download-text'>загрузить</span>
+
+                <div className='download-but-wrapper'>
+                    <div className='download-but-wrapper__download-but'>
                         <img src={downloadIOS} />
                     </div>
-                    <div>
+                    <div className='download-but-wrapper__download-but'>
                         <img src={downloadAndroid} />
                     </div>
                 </div>
             </div>
-            <img src={phone} />
+            <img className="title-block__phone" src={phone} />
         </div>
     )
 }
