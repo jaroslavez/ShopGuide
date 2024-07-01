@@ -400,3 +400,67 @@ img {
     transition: all 0.4s ease-in-out;
   }
 }
+
+.our-promotion-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  width: 1600px;
+  height: 720px;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 406px;
+
+    background-color:#EDECEC;
+  }
+
+  &__text-block {
+    position: relative;
+    top: 50px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+  }
+
+  &__title {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 39.01px;
+  }
+
+  &__text {
+    font-family: 'Futura PT Book';
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  &__phone1 {
+    position: relative;
+    bottom: 135px;
+    left: 80px;
+    width: 285px;
+    height: 550px;
+
+    z-index: 2;
+  }
+
+  &__phone2 {
+    position: relative;
+    width: 349px;
+    height: 544px;
+    bottom: 165px;
+  }
+}
+
+.our-partners-block {
+  max-width: 1600px;
+  width: 100%;
+  height: 594px;
+}

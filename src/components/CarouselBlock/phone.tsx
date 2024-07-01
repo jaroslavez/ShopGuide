@@ -22,16 +22,6 @@ export default function Phone() {
     const arraySlides = Object.values(Slides);
 
     useEffect(() => {
-        // sliderRef.current?.addEventListener("swiped-left", () => {
-        //     if(page === 4)
-        //         return;
-        //     dispatch(setCurrentSlide(arraySlides[page + 1]));
-        // });
-        // sliderRef.current?.addEventListener("swiped-right", () => {
-        //     if(page === 0)
-        //         return;
-        //     dispatch(setCurrentSlide(arraySlides[page - 1]));
-        // });
         let touchstartX = 0
         let touchendX = 0
     
@@ -56,7 +46,7 @@ export default function Phone() {
             touchendX = e.changedTouches[0].screenX
             checkDirection()
         })
-    }, []);
+    });
 
     useEffect(() => {
         let isMouseDown = false;

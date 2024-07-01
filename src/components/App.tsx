@@ -1,6 +1,8 @@
 import TitleBlock from './TitleBlock/index';
 import InfoBlock from './InfoBlock';
 import CarouselBlock from './CarouselBlock';
+import OurPromotionBlock from './OurPromotionBlock';
+import OurPartnersBlock from './OurPartnersBlock';
 
 export default function App() {
 
@@ -9,6 +11,8 @@ export default function App() {
      <TitleBlock />
      <InfoBlock />
      <CarouselBlock />
+     <OurPromotionBlock />
+     <OurPartnersBlock />
    </div>
   )
 }

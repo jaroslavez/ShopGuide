@@ -24,11 +24,11 @@ export default function SliderItem({text, currentSlide}: props) {
     useEffect(() => {
 
         if(text === currentSlide) {
-            const App = document.querySelector(".carousel-block")! as HTMLDivElement;
+            const carousel_block = document.querySelector(".carousel-block")! as HTMLDivElement;
             const currentEl = ref.current;
             const previousEl = currentEl.previousElementSibling as (HTMLDivElement | null);
 
-            setMarginLeft(calculateMarginLeft(App, currentEl, previousEl, offset));
+            setMarginLeft(calculateMarginLeft(carousel_block, currentEl, previousEl, offset));
         }
         else {
             setMarginLeft(null);
@@ -57,13 +57,13 @@ export default function SliderItem({text, currentSlide}: props) {
     )
 } 
 
-function calculateMarginLeft(App: HTMLDivElement, currentEl: HTMLDivElement, previousEl: (HTMLDivElement | null), offset: number): number {
+function calculateMarginLeft(carousel_block: HTMLDivElement, currentEl: HTMLDivElement, previousEl: (HTMLDivElement | null), offset: number): number {
     if(previousEl === null)
         return 0;
-    const AppLeft = App.getBoundingClientRect().left;
+    const carousel_blockLeft = carousel_block.getBoundingClientRect().left;
     const currentElLeft = currentEl.getBoundingClientRect().left;
     const currentElOffsetLeft = currentEl.offsetLeft;
     const previousElWidth = previousEl.offsetWidth;
 
-    return currentElLeft - AppLeft - currentElOffsetLeft - previousElWidth - GAP - 10 + offset;
+    return currentElLeft - carousel_blockLeft - currentElOffsetLeft - previousElWidth - GAP - 10 + offset;
 }
