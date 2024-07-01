@@ -1,5 +1,6 @@
 import TitleBlock from './TitleBlock/index';
 import InfoBlock from './InfoBlock';
+import CarouselBlock from './CarouselBlock';
 
 export default function App() {
 
@@ -7,6 +8,7 @@ export default function App() {
    <div className='App'>
      <TitleBlock />
      <InfoBlock />
+     <CarouselBlock />
    </div>
   )
 }

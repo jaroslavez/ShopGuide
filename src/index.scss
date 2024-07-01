@@ -1,4 +1,5 @@
 $bg-img: url("./assets/bg.jpg"); 
+$phone-img: url("./assets/carousel-block/phone2.png");
 
 @font-face {
   font-family: 'FuturaDemiC';
@@ -20,14 +21,35 @@ $bg-img: url("./assets/bg.jpg");
   ;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/Montserrat-Regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: 'Futura PT Book';
+	src: url(/fonts/futura_pt_book.eot) format('eot'), 
+		url(/fonts/futura_pt_book.woff2) format('woff2'), 
+		url(/fonts/futura_pt_book.woff) format('woff'), 
+		url(/fonts/futura_pt_book.ttf) format('ttf'), 
+		url(/fonts/futura_pt_book.svg) format('svg'); 
+}
+
 body {
   margin: 0;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none; /* Для браузеров на базе WebKit */
+  user-drag: none; /* В качестве резерва, если свойство станет стандартным */
 }
 
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .title-block {
@@ -71,9 +93,8 @@ body {
   }
   
   &__download-text{
-    font-family: FuturaBookC;
+    font-family: Montserrat;
     color: white;
-    font-size: 18px;
 
     display: flex;
     align-items: center;
@@ -189,14 +210,18 @@ body {
   flex-direction: column;
   align-items: center;
 
-  min-height: 430px;
+  gap: 50px;
 
-  color: white;
+  min-height: 430px;
 
   &__down-button {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     cursor: pointer;
+
+    font-family: FuturaBookC;
+    color: white;
 
     position: relative;
     top: -25px;
@@ -206,5 +231,172 @@ body {
     box-shadow: 5px 5px 25px gray;
     border-radius: 15px;
     background-color: #29D3D1;
+  }
+
+  &__arrow-down-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 55px;
+
+    width: 35px;
+    height: 20px;
+
+    @mixin down ($margin-left, $margin-right){
+      content: "ВНИЗ";
+      flex: 1;
+      margin-right: $margin-right;
+      margin-left: $margin-left;
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    &::before {
+      @include down(0, 24px);
+    }
+
+    &::after {
+      @include down(24px, 0);
+    }
+  }
+
+  &__info-list-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__title {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__text {
+    font-family: Montserrat;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.carousel-block {
+  display: flex;
+  width: 1600px;
+  height: 430px;
+  color: #ffffff;
+  
+  background: #29D3D1;
+
+  &__carousel-wrapper {
+    position: relative;
+    top: 60px;
+    left: 324px;
+    width: 687px;
+    height: 218px;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 50px;
+    
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  @mixin slider-item-default($circle) {
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative; /* Относительное позиционирование */
+    display: inline-block;
+    
+
+    &::after {
+      content: ''; /* Выводим пустое содержимое */
+      position: absolute; /* Абсолютное позиционирование */
+      background: #ffffff; /* Цвет линии */
+      left: 0; /* Положение линии слева */
+      bottom: -15px; /* Положение линии */
+      
+      width: 100%; /* Линия на ширину текста */
+      height: 4px;
+
+      @if $circle > 0 {
+        transition: clip-path 0.3s ease-in-out;
+      }
+      clip-path: circle($circle);
+    }
+  }
+
+  &__slider-item {
+    @include slider-item-default(0);
+    opacity: 0.4;
+    transition: opacity .15s ease;
+
+    &:hover, &:active {
+      opacity: 1;
+    }
+  }
+
+  &__slider-item_actived {
+    @include slider-item-default(100%);
+  }
+
+  &__text {
+    font-family: "Futura PT Book";
+    font-size: 24px;
+    opacity: 0;
+  }
+
+  &__text_appearence {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+  }
+}
+
+.phone {
+  position: relative;
+  top: -67.5px;
+  left: 271px;
+  z-index: 2;
+
+  background-image: $phone-img;
+  background-position: center top;
+
+  width: 277px;
+  height: 565px;
+
+  &__slider {
+    position: relative;
+    top: 55px;
+    left: 17px;
+    width: 243px;
+    height: 431px;
+    
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    overflow: hidden;
+  }
+
+  &__strip {
+    -webkit-user-drag: none;
+    display: flex;
+    transition: all 0.4s ease-in-out;
   }
 }
