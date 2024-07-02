@@ -3,6 +3,7 @@ import InfoBlock from './InfoBlock';
 import CarouselBlock from './CarouselBlock';
 import OurPromotionBlock from './OurPromotionBlock';
 import OurPartnersBlock from './OurPartnersBlock';
+import Footer from './Footer';
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
      <CarouselBlock />
      <OurPromotionBlock />
      <OurPartnersBlock />
+     <Footer />
    </div>
   )
 }
