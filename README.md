@@ -1,3 +1,7 @@
 # Это сделанное тестовое задание ShopGuide
+**Как запустить?**
 
-Просто клонируйте репозиторий и пропишите в консоли "npm dev" (или "yarn dev").
+Пропишите следующие команды в выбранном репозитории:
+1. **git clone https://github.com/jaroslavez/ShopGuide**
+2. **npm install**
+3. **npm run dev**
