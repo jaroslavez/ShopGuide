@@ -19,10 +19,10 @@ export default function Content () {
                 <span className='title-block__download-text'>загрузить</span>
 
                 <div className='download-but-wrapper'>
-                    <div className='download-but-wrapper__download-but'>
+                    <div className='download-but-wrapper__download-but' onClick={() => location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
                         <img src={downloadIOS} />
                     </div>
-                    <div className='download-but-wrapper__download-but'>
+                    <div className='download-but-wrapper__download-but' onClick={() => location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
                         <img src={downloadAndroid} />
                     </div>
                 </div>

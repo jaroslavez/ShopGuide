@@ -11,7 +11,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <button className="footer__contact-us-but">
+            <button className="footer__contact-us-but" onClick={() => location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
                 <img className="footer__contact-us-but-image" src={contact} />
                 <span className='footer__contact-us-but-text'>СВЯЗАТЬСЯ С НАМИ</span>
             </button>

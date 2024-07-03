@@ -15,7 +15,7 @@ export default function Header(){
             <ItemHeader icon={icon_fb} />
             <ItemHeader icon={icon_ok} />
 
-            <div className="header__bec-partnr-but">
+            <div className="header__bec-partnr-but" onClick={() => location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
                 <span>СТАТЬ ПАРТНЕРОМ</span>
             </div>
         </header>

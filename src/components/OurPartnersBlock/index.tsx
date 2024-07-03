@@ -11,7 +11,10 @@ export default function OurPartnersBlock() {
                 <p>Хотите стать партнёром?<br/>Напишите нам и про ваши акции узнают все.</p>
             </div>
 
-            <button className="our-partners-block__became-partner-but">СТАТЬ ПАРТЕРОМ</button>
+            <button className="our-partners-block__became-partner-but" 
+            onClick={() => location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
+                СТАТЬ ПАРТЕРОМ
+            </button>
         </div>
     )
 }
